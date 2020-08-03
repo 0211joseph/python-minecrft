@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug  3 11:23:42 2020
+
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+import time 
+mc=Minecraft.create()
+time.sleep(5)
+print(mc.player.getTilePos())
+
+x,y,z=mc.player.getTilePos()
+
+mc.player.setPos(x,y,z)
+time.sleep(0.5)
+y=y+1
+mc.player.setPos(x,y,z)
+time.sleep(0.5)
+y=y+1
+mc.player.setPos(x,y,z)
+
+health = 100
+print(health)
+health = health-2
+print(health)
+
+while True:
+    print("做")
+    
+while False:
+    print("不做")
+
+while True:
+    mc.postToChat("joseph")
+    
+'''t=0
+while True:
+    t=t+1
+    mc.postToChat("第"+str(t)+"次")'''
