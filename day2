@@ -1,1 +1,118 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug  4 13:46:25 2020
 
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+
+mc.postToChat("I am wathing you.")
+
+while True:
+    x,y,z =mc.player.getTilePos()
+    mc.postToChat("You are located on X:"+str(x)
+                                    +",Y:"+str(y)
+                                    +",Z:"+str(z))
+x,y,z=mc.player.getTilePos()
+mc.setBlock(x,y+1,z,103)
+mc.setBlock(x,y+2,z,103)
+mc.setBlock(x,y+3,z,103)
+mc.setBlock(x,y+4,z,103)
+mc.setBlock(x,y+5,z,103)
+mc.setBlock(x,y+6,z,103)
+mc.setBlock(x,y+7,z,103)
+mc.setBlock(x,y+8,z,103)
+mc.setBlock(x,y+9,z,103)
+mc.setBlock(x,y+10,z,103)
+
+x,y,z =mc.player.getTilePos()
+mc.setBlock(x-1,y-1,z+1,46)
+mc.setBlock(x,y-1,z+1,46)
+mc.setBlock(x+1,y-1,z+1,46)
+mc.setBlock(x+1,y-1,z,46)
+mc.setBlock(x+1,y-1,z-1,46)
+mc.setBlock(x,y-1,z-1,46)
+mc.setBlock(x-1,y-1,z-1,46)
+mc.setBlock(x-1,y-1,z,46)
+
+mc.setBlock(x,y,z,95)
+mc.setBlocks(x-50,y-50,z-50,x+50,y+50,z+50,78)
+
+import time
+import random
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+time.sleep(5)
+
+x,y,z=mc.player.getTilePos()
+
+while True:
+    color=random.randrange(0,16)
+    mc.setBlocks(x+50,y-1,z+50,x-50,y-1,z-50,95,color)
+    time.sleep(0.5)
+    
+    
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create() 
+pos=mc.player.getTilePos()
+x=pos.x
+y=pos.y
+z=pos.z
+width=15
+heigth=10
+length=11
+blockType=46
+air=0
+mc.setBlocks(x,y,z,x+width,y+heigth,z+length,blockType)
+mc.setBlocks(x+1,y+1,z+1,x+width-1,y+heigth-1,z+length-1,air)
+
+import time
+import random
+while True:
+    color=random.randrange(0,9)
+    x,y,z =mc.player.getTilePos()
+    mc.setBlock(x,y,z,38,color)
+    time.sleep(0.5)
+    
+    
+from mcpi.minecraft import Minecraft
+import time
+mc=Minecraft.create()
+
+while True:
+    x,y,z =mc.player.getPos()
+    mc.setBlocks(x,y,z,8)
+    time.sleep(20)
+    
+x,y,z =mc.player.getTilePos()
+a = mc.getBlock(x, y, z+1)
+b = mc.getBlock(x, y, z-1)
+c = mc.getBlock(x+1, y, z)
+d = mc.getBlock(x-1, y, z)
+
+if a ==8 or a==9 or b ==8 or b==9 or c ==8 or c==9 or d ==8 or d==9:
+     mc.setBlocks(x+1,y-1,z+1,x-1,y-1,z-1,19)
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug  4 15:51:02 2020
+
+@author: D305
+"""
+
+from mcpi.minecraft import Minecraft
+mc=Minecraft.create()
+x,y,z =mc.player.getTilePos()
+
+a=0
+while a<5:
+    mc.setBlocks(x+30,y-1,z,x-30,y-10,z,19)
+    z=z-5
+    a=a+1
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+ 
+userName = input("請輸入姓名: ")
+message = input("請輸入發言: ")
+mc.postToChat(" ["+userName + "] " + message)
